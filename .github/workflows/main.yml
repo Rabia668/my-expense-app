@@ -34,12 +34,12 @@ jobs:
         cmd: install #npm install/yarn install
           
     - name: creating build
-      run: npm build 
+      run: yarn build 
        
     - name: install surge
-      run: sudo npm install --global surge
+      run: npm install --global surge
        
-    - name: deploying to surge
+    - name: deploying on surge
       run: surge ./build http://my-expenseapp.surge.sh/ --token ${{secrets.SURGE_TOKEN}}
         
       
